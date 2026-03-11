@@ -41,6 +41,9 @@ How to use:
         # note - both asset-name and asset-type can be left blank and
         will return all assets
 
+    List Failed Asset and Asset Version Additions:
+        - python cli.py list-failed
+
     Add Asset Version:
         - python cli.py versions add <name> <type> <department> <version_num> <status>
         ie python cli.py versions add guy character modeling 1 status

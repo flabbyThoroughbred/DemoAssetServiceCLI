@@ -102,6 +102,20 @@ def list_cmd(ctx, asset_name, asset_type):
         click.echo(asset)
 
 
+@cli.command(name="list-failed")
+@click.pass_context
+def list_failed(ctx):
+    """List all failed asset and asset version additions"""
+    _service = ctx.obj["service"]
+    failed = _service.list_failed_adds()
+    if failed:
+        click.echo("found failed additions -- ")
+    else:
+        click.echo("No failed data additions could be found.")
+    for record in failed:
+        click.echo(record)
+
+
 @cli.group()
 def versions():
     """CLI group to manage asset version subcommands"""
